@@ -667,7 +667,7 @@ local function run(msg, matches)
                     floodTime = redis:get(hash)
                 end
 
-                text = text..'≥ '..lang_text(msg.to.id, 'mFlood')..': '..floodMax..'\n≥ '..lang_text(msg.to.id, 'tFlood')..': '..floodTime..'\n'            
+                text = text..'≥ '..lang_text(msg.to.id, 'mFlood')..': '..floodMax..'\n≥ '..lang_text(msg.to.id, 'tFlood')..': '..floodTime..'\nRegolator Bot Setting'            
                 
                 --Send settings to group or supergroup
                 if msg.to.type == 'chat' then
