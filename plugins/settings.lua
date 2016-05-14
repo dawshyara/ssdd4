@@ -493,10 +493,10 @@ local function run(msg, matches)
                 local hash = 'stickers:'..msg.to.id
                 if redis:get(hash) then
                     sStickers = noAllowed
-                    sStickersD = '🔹'
+                    sStickersD = '-∅-'
                 else
                     sStickers = allowed
-                    sStickersD = '🔸'
+                    sStickersD = '-∅-'
                 end
                 text = text..sStickersD..' '..lang_text(msg.to.id, 'stickers')..': '..sStickers..'\n'
 
@@ -504,10 +504,10 @@ local function run(msg, matches)
                 local hash = 'tgservices:'..msg.to.id
                 if redis:get(hash) then
                     tTgservices = noAllowed
-                    tTgservicesD = '🔹'
+                    tTgservicesD = '-∅-'
                 else
                     tTgservices = allowed
-                    tTgservicesD = '🔸'
+                    tTgservicesD = '-∅-'
                 end
                 text = text..tTgservicesD..' '..lang_text(msg.to.id, 'tgservices')..': '..tTgservices..'\n'
 
@@ -515,10 +515,10 @@ local function run(msg, matches)
                 local hash = 'links:'..msg.to.id
                 if redis:get(hash) then
                     sLink = noAllowed
-                    sLinkD = '🔹'
+                    sLinkD = '-∅-'
                 else
                     sLink = allowed
-                    sLinkD = '🔸'
+                    sLinkD = '-∅-'
                 end
                 text = text..sLinkD..' '..lang_text(msg.to.id, 'links')..': '..sLink..'\n'
 
@@ -526,10 +526,10 @@ local function run(msg, matches)
                 local hash = 'arabic:'..msg.to.id
                 if not redis:get(hash) then
                     sArabe = allowed
-                    sArabeD = '🔸'              
+                    sArabeD = '-∅-'              
                 else
                     sArabe = noAllowed
-                    sArabeD = '🔹'
+                    sArabeD = '-∅-'
                 end
                 text = text..sArabeD..' '..lang_text(msg.to.id, 'arabic')..': '..sArabe..'\n'
 
@@ -537,10 +537,10 @@ local function run(msg, matches)
                 local hash = 'antibot:'..msg.to.id
                 if not redis:get(hash) then
                     sBots = allowed
-                    sBotsD = '🔸'
+                    sBotsD = '-∅-'
                 else
                     sBots = noAllowed
-                    sBotsD = '🔹'
+                    sBotsD = '-∅-'
                 end
                 text = text..sBotsD..' '..lang_text(msg.to.id, 'bots')..': '..sBots..'\n'
                 
@@ -548,10 +548,10 @@ local function run(msg, matches)
                 local hash = 'gifs:'..msg.to.id
                 if redis:get(hash) then
                     sGif = noAllowed
-                    sGifD = '🔹'
+                    sGifD = '-∅-'
                 else
                     sGif = allowed
-                    sGifD = '🔸'
+                    sGifD = '-∅-'
                 end
                 text = text..sGifD..' '..lang_text(msg.to.id, 'gifs')..': '..sGif..'\n'
                 
@@ -559,10 +559,10 @@ local function run(msg, matches)
                 local hash = 'photo:'..msg.to.id
                 if redis:get(hash) then
                     sPhoto = noAllowed
-                    sPhotoD = '🔹'
+                    sPhotoD = '-∅-'
                 else
                     sPhoto = allowed
-                    sPhotoD = '🔸'
+                    sPhotoD = '-∅-'
                 end
                 text = text..sPhotoD..' '..lang_text(msg.to.id, 'photos')..': '..sPhoto..'\n'
 
@@ -570,10 +570,10 @@ local function run(msg, matches)
                 local hash = 'audio:'..msg.to.id
                 if redis:get(hash) then
                     sAudio = noAllowed
-                    sAudioD = '🔹'
+                    sAudioD = '-∅-'
                 else
                     sAudio = allowed
-                    sAudioD = '🔸'
+                    sAudioD = '-∅-'
                 end
                 text = text..sAudioD..' '..lang_text(msg.to.id, 'audios')..': '..sAudio..'\n'
 
@@ -581,10 +581,10 @@ local function run(msg, matches)
                 local hash = 'kickme:'..msg.to.id
                 if redis:get(hash) then
                     sKickme = allowed
-                    sKickmeD = '🔸'
+                    sKickmeD = '-∅-'
                 else
                     sKickme = noAllowed
-                    sKickmeD = '🔹'
+                    sKickmeD = '-∅-'
                 end
                 text = text..sKickmeD..' '..lang_text(msg.to.id, 'kickme')..': '..sKickme..'\n'
 
@@ -592,10 +592,10 @@ local function run(msg, matches)
                 local hash = 'spam:'..msg.to.id
                 if redis:get(hash) then
                     sSpam = noAllowed
-                    sSpamD = '🔹'
+                    sSpamD = '-∅-'
                 else
                     sSpam = allowed
-                    sSpamD = '🔸'
+                    sSpamD = '-∅-'
                 end
                 text = text..sSpamD..' '..lang_text(msg.to.id, 'spam')..': '..sSpam..'\n'
 
@@ -603,10 +603,10 @@ local function run(msg, matches)
                 local hash = 'setphoto:'..msg.to.id
                 if not redis:get(hash) then
                     sSPhoto = allowed
-                    sSPhotoD = '🔸'
+                    sSPhotoD = '-∅-'
                 else
                     sSPhoto = noAllowed
-                    sSPhotoD = '🔹'
+                    sSPhotoD = '-∅-'
                 end
                 text = text..sSPhotoD..' '..lang_text(msg.to.id, 'setphoto')..': '..sSPhoto..'\n'
 
@@ -614,10 +614,10 @@ local function run(msg, matches)
                 local hash = 'name:enabled:'..msg.to.id
                 if redis:get(hash) then
                     sName = noAllowed
-                    sNameD = '🔹'
+                    sNameD = '-∅-'
                 else
                     sName = allowed
-                    sNameD = '🔸'
+                    sNameD = '-∅-'
                 end
                 text = text..sNameD..' '..lang_text(msg.to.id, 'gName')..': '..sName..'\n'
 
@@ -625,10 +625,10 @@ local function run(msg, matches)
                 local hash = 'lockmember:'..msg.to.id
                 if redis:get(hash) then
                     sLock = noAllowed
-                    sLockD = '🔹'
+                    sLockD = '-∅-'
                 else
                     sLock = allowed
-                    sLockD = '🔸'
+                    sLockD = '-∅-'
                 end
                 text = text..sLockD..' lockmembers: '..sLock..'\n'
 
@@ -636,20 +636,20 @@ local function run(msg, matches)
                 local hash = 'anti-flood:'..msg.to.id
                 if redis:get(hash) then
                     sFlood = allowed
-                    sFloodD = '🔸'
+                    sFloodD = '-∅-'
                 else
                     sFlood = noAllowed
-                    sFloodD = '🔹'
+                    sFloodD = '-∅-'
                 end
                 text = text..sFloodD..' '..lang_text(msg.to.id, 'flood')..': '..sFlood..'\n'
 
                 local hash = 'langset:'..msg.to.id
                 if redis:get(hash) then
                     sLang = redis:get(hash)
-                    sLangD = '🔸'
+                    sLangD = '-∅-'
                 else
                     sLang = lang_text(msg.to.id, 'noSet')
-                    sLangD = '🔹'
+                    sLangD = '-∅-'
                 end
                 text = text..sLangD..' '..lang_text(msg.to.id, 'language')..': '..string.upper(sLang)..'\n'
 
@@ -667,7 +667,7 @@ local function run(msg, matches)
                     floodTime = redis:get(hash)
                 end
 
-                text = text..'🔺 '..lang_text(msg.to.id, 'mFlood')..': '..floodMax..'\n🔺 '..lang_text(msg.to.id, 'tFlood')..': '..floodTime..'\n'            
+                text = text..'≥ '..lang_text(msg.to.id, 'mFlood')..': '..floodMax..'\n≥ '..lang_text(msg.to.id, 'tFlood')..': '..floodTime..'\n'            
                 
                 --Send settings to group or supergroup
                 if msg.to.type == 'chat' then
